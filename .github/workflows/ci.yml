@@ -1,0 +1,38 @@
+name: Project Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  sanitizer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for Unwanted Files
+        run: |
+          # Cek folder sampah Unreal
+          if [ -d "Intermediate" ] || [ -d "Saved" ] || [ -d "DerivedDataCache" ]; then
+            echo "🚨 Error: Folder sampah UE terdeteksi di repo! Cek .gitignore kamu."
+            exit 1
+          fi
+
+      - name: Validate .uproject JSON
+        run: cat Hukum_Jalanan.uproject | jq .
+
+      - name: Secret Scan (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lfs-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check LFS Tracking
+        run: |
+          git lfs ls-files
+          echo "✅ LFS tracking verified."
