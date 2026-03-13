@@ -5,7 +5,7 @@
 ![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-5.1.1-0E1128?style=for-the-badge&logo=unrealengine&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Development-orange?style=for-the-badge)
 
-**Hukum Jalanan** adalah sebuah proyek game horror-adventure yang dikembangkan menggunakan **Unreal Engine 5.1.1**. Game ini fokus pada atmosfer yang mencekam, narasi yang kuat, dan eksplorasi lingkungan yang detail.
+**Hukum Jalanan** adalah sebuah proyek game action-adventure yang dikembangkan menggunakan **Unreal Engine 5.1.1**. Game ini fokus pada combat beat-em-up, narasi yang kuat, dan eksplorasi lingkungan yang detail.
 
 ## 📝 Deskripsi Proyek
 Game ini menceritakan tentang [masukkan sedikit sinopsis cerita di sini, misal: perjalanan seorang karakter mencari kebenaran di jalanan yang penuh misteri]. Proyek ini juga merupakan eksplorasi teknis dalam penggunaan:
